@@ -5,7 +5,7 @@ A lightweight, mobile-friendly static site for small U.S. septic service busines
 ## Before publishing
 
 1. Replace every `GUMROAD_PRODUCT_URL_HERE` with the live Gumroad product URL.
-2. Replace `YOUR_GITHUB_USERNAME` in all HTML files, `robots.txt`, and `sitemap.xml`.
+2. Replace `kunhong2108-dotcom` in all HTML files, `robots.txt`, and `sitemap.xml`.
 3. If the repository name is not `septic-business-tools`, replace that path in the canonical, Open Graph, robots, and sitemap URLs.
 
 ## Deploy with GitHub Pages
@@ -15,7 +15,8 @@ A lightweight, mobile-friendly static site for small U.S. septic service busines
 3. In the repository, open **Settings → Pages**.
 4. Under **Build and deployment**, select **Deploy from a branch**.
 5. Choose the `main` branch and the `/(root)` folder, then click **Save**.
-6. Wait for GitHub Pages to display the live URL, usually `https://YOUR_GITHUB_USERNAME.github.io/septic-business-tools/`.
+6. Wait for GitHub Pages to display the live URL, usually `https://kunhong2108-dotcom.github.io/septic-business-tools/`.
 7. Open the live site, test the Gumroad button, and submit the sitemap URL in Google Search Console.
 
 No package installation or build command is required.
+
