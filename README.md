@@ -4,7 +4,7 @@ A lightweight, mobile-friendly static site for small U.S. septic service busines
 
 ## Before publishing
 
-1. Replace every `GUMROAD_PRODUCT_URL_HERE` with the live Gumroad product URL.
+1. Replace every `https://kunhong.gumroad.com/l/SepticRecurringServiceRadar` with the live Gumroad product URL.
 2. Replace `kunhong2108-dotcom` in all HTML files, `robots.txt`, and `sitemap.xml`.
 3. If the repository name is not `septic-business-tools`, replace that path in the canonical, Open Graph, robots, and sitemap URLs.
 
@@ -19,4 +19,5 @@ A lightweight, mobile-friendly static site for small U.S. septic service busines
 7. Open the live site, test the Gumroad button, and submit the sitemap URL in Google Search Console.
 
 No package installation or build command is required.
+
 
