@@ -1,24 +1,12 @@
 (function () {
   var scrollStorageKey = 'temveroScrollTarget';
-  var allowedTargets = ['tools', 'industries', 'guides', 'about', 'featured-tool'];
 
-  function isHomePage() {
-    return window.location.pathname === '/' || /\/index\.html$/.test(window.location.pathname);
-  }
+  function scrollToHomeSection(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target) return false;
 
-  function cleanHomeUrl() {
-    if (!isHomePage()) return;
-    var cleanPath = window.location.pathname.replace(/index\.html$/, '');
-    if (window.location.hash || cleanPath !== window.location.pathname) {
-      window.history.replaceState(null, '', cleanPath + window.location.search);
-    }
-  }
-
-  function scrollToSection(target, behavior) {
-    var section = document.getElementById(target);
-    if (section) {
-      section.scrollIntoView({ behavior: behavior || 'smooth', block: 'start' });
-    }
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
   }
 
   function closeMobileMenu() {
@@ -38,51 +26,36 @@
 
   document.querySelectorAll('[data-scroll-target]').forEach(function (link) {
     link.addEventListener('click', function (event) {
-      var target = link.getAttribute('data-scroll-target');
-      if (!allowedTargets.includes(target)) return;
+      var targetId = link.getAttribute('data-scroll-target');
+      if (!targetId) return;
 
-      event.preventDefault();
-      closeMobileMenu();
-
-      if (isHomePage()) {
-        cleanHomeUrl();
-        scrollToSection(target, 'smooth');
+      if (scrollToHomeSection(targetId)) {
+        event.preventDefault();
+        closeMobileMenu();
         return;
       }
 
       try {
-        window.sessionStorage.setItem(scrollStorageKey, target);
+        window.sessionStorage.setItem(scrollStorageKey, targetId);
       } catch (error) {
-        // The root link still provides a safe fallback if storage is unavailable.
+        // The native root link remains a safe fallback if storage is unavailable.
       }
-      window.location.assign('/');
     });
   });
 
-  if (isHomePage()) {
-    var legacyTarget = window.location.hash.replace(/^#/, '');
-    var storedTarget = null;
-    try {
-      storedTarget = window.sessionStorage.getItem(scrollStorageKey);
-      window.sessionStorage.removeItem(scrollStorageKey);
-    } catch (error) {
-      storedTarget = null;
-    }
+  var storedTarget = null;
+  try {
+    storedTarget = window.sessionStorage.getItem(scrollStorageKey);
+    window.sessionStorage.removeItem(scrollStorageKey);
+  } catch (error) {
+    storedTarget = null;
+  }
 
-    cleanHomeUrl();
-
-    var initialTarget = allowedTargets.includes(storedTarget)
-      ? storedTarget
-      : allowedTargets.includes(legacyTarget)
-        ? legacyTarget
-        : null;
-
-    if (initialTarget) {
+  if (storedTarget) {
+    window.requestAnimationFrame(function () {
       window.requestAnimationFrame(function () {
-        window.requestAnimationFrame(function () {
-          scrollToSection(initialTarget, 'smooth');
-        });
+        scrollToHomeSection(storedTarget);
       });
-    }
+    });
   }
 })();
