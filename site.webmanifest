@@ -1,0 +1,21 @@
+{
+  "name": "Temvero — Templates & Tools",
+  "short_name": "Temvero",
+  "description": "Business Templates & Tools for small businesses and niche industries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f5ec",
+  "theme_color": "#17332b",
+  "icons": [
+    {
+      "src": "assets/branding/temvero-app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/branding/temvero-app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
