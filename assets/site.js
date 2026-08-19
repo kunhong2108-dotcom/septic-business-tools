@@ -1,0 +1,1 @@
+document.querySelectorAll('.mobile-menu').forEach(function(button){button.addEventListener('click',function(){var menu=document.querySelector('.nav-links');var open=menu.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});});
