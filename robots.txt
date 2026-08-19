@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kunhong2108-dotcom.github.io/septic-business-tools/sitemap.xml
+Sitemap: https://temvero.com/sitemap.xml
 
