@@ -1,23 +1,15 @@
-# Septic Business Tools
+# Temvero
 
-A lightweight, mobile-friendly static site for small U.S. septic service businesses. It uses plain HTML, CSS, and a small navigation script. There is no build step, database, login, or API.
+Business Templates & Tools for small businesses and niche industries.
 
-## Before publishing
+## Website
 
-1. Replace every `https://kunhong.gumroad.com/l/SepticRecurringServiceRadar` with the live Gumroad product URL.
-2. Replace `kunhong2108-dotcom` in all HTML files, `robots.txt`, and `sitemap.xml`.
-3. If the repository name is not `septic-business-tools`, replace that path in the canonical, Open Graph, robots, and sitemap URLs.
+https://temvero.com
 
-## Deploy with GitHub Pages
+## First Product
 
-1. Create a public GitHub repository named `septic-business-tools`.
-2. Upload all files and folders from this project to the repository root, including `.nojekyll`.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Choose the `main` branch and the `/(root)` folder, then click **Save**.
-6. Wait for GitHub Pages to display the live URL, usually `https://kunhong2108-dotcom.github.io/septic-business-tools/`.
-7. Open the live site, test the Gumroad button, and submit the sitemap URL in Google Search Console.
+Septic Recurring Service Radar
 
-No package installation or build command is required.
+## Deployment
 
-
+The production site is published through GitHub Pages using the custom domain https://temvero.com.
