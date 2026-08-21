@@ -12,6 +12,10 @@ function Test-SiteReference {
     [string]$Reference
   )
 
+  if ($Reference -eq ('FREE_TRACKER_' + 'GUMROAD_URL')) {
+    return @{ Exists = 'N/A'; Target = 'expected Gumroad placeholder' }
+  }
+
   if ($Reference -match '^(https?:|mailto:|tel:|data:)') {
     return @{ Exists = 'N/A'; Target = 'external' }
   }
